@@ -41,7 +41,7 @@ const Timeline = () => {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }}
                     className="flex flex-col md:flex-row justify-between items-start md:items-end gap-10 mb-[100px]"
                 >
                     <div>
@@ -84,7 +84,7 @@ const Timeline = () => {
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
-                            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] as const }}
                         >
                             {timelineData[activeTab].map((item, idx) => (
                                 <div

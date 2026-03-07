@@ -33,7 +33,7 @@ const CTA = () => {
                     initial={{ opacity: 0, scale: 0.98 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }}
                     className="card-minimal flex flex-col items-center justify-center text-center py-[140px] px-6 relative overflow-hidden bg-black shadow-[0_40px_100px_rgba(0,0,0,0.8)] border-accent-primary/10"
                 >
                     {/* Subtle Directional Light */}

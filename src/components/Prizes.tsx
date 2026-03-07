@@ -9,7 +9,7 @@ const Prizes = () => {
 
     const itemVariants = {
         hidden: { opacity: 0, y: 30 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const } }
     };
 
     return (
@@ -23,7 +23,7 @@ const Prizes = () => {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }}
                     className="mb-[140px] max-w-[800px] text-center mx-auto"
                 >
                     <p className="font-mono text-[13px] text-accent-gold font-bold uppercase tracking-[4px] mb-[32px]">
@@ -44,7 +44,7 @@ const Prizes = () => {
                 >
                     {/* Winner - Elevated (Centered but placed first in code for semantic, let's use md:order to place it center visually if needed, but flex/grid works fine ) */}
 
-                    <motion.div variants={itemVariants} className="md:col-start-2 card-minimal min-h-[500px] flex flex-col justify-between py-[48px] px-[40px] relative border-accent-gold/20 shadow-[0_0_80px_rgba(212,175,55,0.06)] overflow-visible z-20 scale-100 md:scale-105">
+                    <motion.div variants={itemVariants} className="md:col-start-2 card-minimal min-h-[500px] flex flex-col justify-between py-[48px] px-[40px] relative border-accent-gold/20 shadow-[0_0_80px_rgba(212,175,55,0.06)] overflow-visible z-20 scale-100 md:scale-105 group">
                         {/* Visual Gold Crown/Star shape */}
                         <div className="absolute -top-[40px] left-1/2 -translate-x-1/2 w-[80px] h-[80px] rounded-full bg-accent-gold/10 border border-accent-gold/30 flex items-center justify-center backdrop-blur-md">
                             <div className="w-[12px] h-[12px] rounded-full bg-accent-gold shadow-[0_0_20px_#D4AF37]" />
@@ -63,7 +63,7 @@ const Prizes = () => {
                         </div>
 
                         <div className="mt-[64px] border-t border-accent-gold/10 pt-[32px] text-center">
-                            <span className="font-mono text-[16px] text-accent-gold opacity-80 uppercase tracking-widest blur-[1px]">
+                            <span className="font-mono text-[16px] text-accent-gold opacity-80 uppercase tracking-widest blur-[1px] group-hover:blur-none">
                                 Evaluation Pending
                             </span>
                         </div>
