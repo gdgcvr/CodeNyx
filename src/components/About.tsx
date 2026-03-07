@@ -6,7 +6,7 @@ const StatsCard = ({ title, metric, delay }: { title: string, metric: string, de
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] as const }}
         className="bg-[#0e0e0e] border border-white/5 p-[24px] rounded-[8px] flex flex-col justify-between"
     >
         <div className="w-2 h-2 rounded-full bg-accent-secondary mb-[16px]" />
@@ -31,7 +31,7 @@ const About = () => {
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }}
                         className="flex-1 w-full"
                     >
                         <p className="font-mono text-[13px] text-accent-secondary font-bold uppercase tracking-[4px] mb-[32px]">
@@ -70,7 +70,7 @@ const About = () => {
                             initial={{ opacity: 0, x: 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, margin: "-100px" }}
-                            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+                            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as const, delay: 0.1 }}
                             className="col-span-2 aspect-[2/1] bg-[#0A0A0B] border border-white/10 rounded-[12px] relative overflow-hidden flex flex-col pt-[16px]"
                         >
                             {/* Simulated UI "Window" Header */}

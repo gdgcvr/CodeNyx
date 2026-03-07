@@ -48,7 +48,7 @@ const FAQItem = ({ faq, isOpen, toggleOpen, index }: { faq: any, isOpen: boolean
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] as const }}
                         className="overflow-hidden pl-[24px]"
                     >
                         <p className="font-body text-[18px] text-[rgba(255,255,255,0.5)] leading-[1.8] pt-[32px] max-w-[85%]">
@@ -76,7 +76,7 @@ const FAQ = () => {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }}
                     className="mb-[100px] lg:mb-[140px]"
                 >
                     <p className="font-mono text-[13px] text-accent-secondary font-bold uppercase tracking-[4px] mb-[32px]">
@@ -91,7 +91,7 @@ const FAQ = () => {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as const, delay: 0.1 }}
                     className="flex flex-col border-t border-accent-secondary/10 relative"
                 >
                     {faqs.map((faq, idx) => (

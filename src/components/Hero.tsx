@@ -75,7 +75,7 @@ const Hero = () => {
 
     const itemVariants = {
         hidden: { opacity: 0, y: 30 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const } }
     };
 
     return (
@@ -118,7 +118,7 @@ const Hero = () => {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -20 }}
-                                    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                                    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
                                     className="absolute text-accent-primary whitespace-nowrap"
                                 >
                                     {WORDS[wordIndex]}
