@@ -38,6 +38,54 @@ const GeometricCore = () => (
     </div>
 );
 
+const TypewriterTitle = () => {
+    const text = "CodeNyx";
+    const [displayedText, setDisplayedText] = useState("");
+    const [isDeleting, setIsDeleting] = useState(false);
+
+    useEffect(() => {
+        let timeout: ReturnType<typeof setTimeout>;
+
+        const typeSpeed = 200;
+        const deleteSpeed = 150;
+        const pauseDelay = 3000;
+
+        const handleTyping = () => {
+            if (!isDeleting) {
+                if (displayedText.length < text.length) {
+                    setDisplayedText(text.substring(0, displayedText.length + 1));
+                } else {
+                    timeout = setTimeout(() => setIsDeleting(true), pauseDelay);
+                    return;
+                }
+            } else {
+                if (displayedText.length > 0) {
+                    setDisplayedText(text.substring(0, displayedText.length - 1));
+                } else {
+                    setIsDeleting(false);
+                }
+            }
+        };
+
+        timeout = setTimeout(handleTyping, isDeleting ? deleteSpeed : typeSpeed);
+
+        return () => clearTimeout(timeout);
+    }, [displayedText, isDeleting]);
+
+    return (
+        <span className="flex items-center justify-center relative min-h-[1em] min-w-[5ch]">
+            <span className="text-gradient-primary">{displayedText}</span>
+            <motion.span
+                animate={{ opacity: (displayedText === text && !isDeleting) ? 0 : [1, 0, 1] }}
+                transition={{ duration: (displayedText === text && !isDeleting) ? 0.3 : 1, repeat: (displayedText === text && !isDeleting) ? 0 : Infinity, ease: "linear" }}
+                className="text-white/80 font-light ml-[0.2em] translate-y-[-0.08em]"
+            >
+                |
+            </motion.span>
+        </span>
+    );
+};
+
 const Hero = () => {
     const [wordIndex, setWordIndex] = useState(0);
     const [timeLeft, setTimeLeft] = useState<{ d: number; h: number; m: number; s: number } | null>(null);
@@ -99,9 +147,9 @@ const Hero = () => {
                 {/* Title - Massive */}
                 <motion.h1
                     variants={itemVariants}
-                    className="font-display font-black text-[clamp(72px,16vw,180px)] tracking-[-0.05em] leading-[0.85] pb-4 text-gradient-primary w-full"
+                    className="font-display font-black text-[clamp(72px,16vw,180px)] tracking-[-0.05em] leading-[0.85] pb-4 w-full flex items-center justify-center"
                 >
-                    CodeNyx
+                    <TypewriterTitle />
                 </motion.h1>
 
                 {/* Subtitle - Pure White */}
