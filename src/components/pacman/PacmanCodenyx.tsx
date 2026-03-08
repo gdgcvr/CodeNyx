@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import "./PacmanCodenyx.css";
 
-// ─── Types ────────────────────────────────────────────────────────────────────
 
 interface Sizes {
   scale: number;
@@ -47,6 +46,10 @@ interface GhostObj {
   jumpPhase: number;
   squishAmt: number;
   frame: number;
+  pupilL: SVGCircleElement | null;
+  pupilR: SVGCircleElement | null;
+  eyePhase: number;  // per-ghost oscillation offset
+  eyeSpeed: number;  // per-ghost oscillation speed
 }
 
 type Phase = "idle" | "eating" | "ghosts" | "done";
@@ -58,7 +61,6 @@ export interface PacmanCodenyxProps
   style?: React.CSSProperties;
 }
 
-// ─── Constants ────────────────────────────────────────────────────────────────
 
 const WORD = "CODENYX";
 const GHOST_COLORS = [
@@ -72,7 +74,6 @@ const GHOST_COLORS = [
 ];
 const DOT_DELAY = 70;
 
-// ─── Pure helpers (no DOM) ────────────────────────────────────────────────────
 
 function getScale(stageWidth: number): number {
   return Math.max(0.38, Math.min(1, stageWidth / 700));
@@ -155,6 +156,8 @@ function ghostSVG(color: string): string {
         <feGaussianBlur stdDeviation="1.5" result="blur"/>
         <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
       </filter>
+      <clipPath id="cl-l-${id}"><ellipse cx="7"  cy="8.5" rx="2.4" ry="2.6"/></clipPath>
+      <clipPath id="cl-r-${id}"><ellipse cx="13" cy="8.5" rx="2.4" ry="2.6"/></clipPath>
     </defs>
     <path filter="url(#${id})" fill="${color}" d="
       M1 20 L1 7 Q1 1 10 1 Q19 1 19 7 L19 20
@@ -163,8 +166,8 @@ function ghostSVG(color: string): string {
     "/>
     <ellipse cx="7"  cy="8.5" rx="2.8" ry="3" fill="white"/>
     <ellipse cx="13" cy="8.5" rx="2.8" ry="3" fill="white"/>
-    <circle  cx="7.8"  cy="9.2" r="1.4" fill="#111"/>
-    <circle  cx="13.8" cy="9.2" r="1.4" fill="#111"/>
+    <circle data-pupil-l cx="7"  cy="8.5" r="1.35" fill="#111" clip-path="url(#cl-l-${id})"/>
+    <circle data-pupil-r cx="13" cy="8.5" r="1.35" fill="#111" clip-path="url(#cl-r-${id})"/>
   </svg>`;
 }
 
@@ -205,7 +208,6 @@ function spawnBlast(
   setTimeout(() => ring.remove(), 400);
 }
 
-// ─── Component ────────────────────────────────────────────────────────────────
 
 export default function PacmanCodenyx({
   id,
@@ -314,6 +316,10 @@ export default function PacmanCodenyx({
           jumpPhase: Math.random() * Math.PI * 2,
           squishAmt: 0.15 + Math.random() * 0.2,
           frame: 0,
+          pupilL: el.querySelector("[data-pupil-l]") as SVGCircleElement | null,
+          pupilR: el.querySelector("[data-pupil-r]") as SVGCircleElement | null,
+          eyePhase: Math.random() * Math.PI * 2,
+          eyeSpeed: 0.03 + Math.random() * 0.025,
         };
       });
     }
@@ -397,6 +403,19 @@ export default function PacmanCodenyx({
 
         g.el.style.left = g.x + "px";
         g.el.style.transform = `translateY(calc(-50% + ${bounceY}px)) scaleX(${scaleX.toFixed(3)}) scaleY(${scaleY.toFixed(3)})`;
+
+        // Pupils look left while moving, ease to center as they arrive
+        // Pupils oscillate left-biased — mostly left, drift right and back
+        if (g.pupilL && g.pupilR) {
+          g.eyePhase += g.eyeSpeed;
+          // Center at -0.9 (left-biased), amplitude ±0.8 so range is [-1.7, -0.1]
+          const ox = -0.9 + Math.sin(g.eyePhase) * 0.8;
+          const oy =        Math.sin(g.eyePhase * 1.3 + 1) * 0.5; // subtle vertical drift
+          g.pupilL.setAttribute("cx", (7  + ox).toFixed(3));
+          g.pupilR.setAttribute("cx", (13 + ox).toFixed(3));
+          g.pupilL.setAttribute("cy", (8.5 + oy).toFixed(3));
+          g.pupilR.setAttribute("cy", (8.5 + oy).toFixed(3));
+        }
 
         if (g.x <= target + 4) {
           g.delivered = true;
