@@ -8,6 +8,7 @@ import Timeline from './components/Timeline';
 import Prizes from './components/Prizes';
 import CTA from './components/CTA';
 import FAQ from './components/FAQ';
+import PacmanCodenyx from './components/pacman/PacmanCodenyx';
 import Footer from './components/Footer';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Prizes />
         <CTA />
         <FAQ />
+        <PacmanCodenyx />
       </main>
       <Footer />
     </div>

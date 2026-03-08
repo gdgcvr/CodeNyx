@@ -341,8 +341,8 @@ export default function PacmanCodenyx({
       const speed = inZone
         ? pacSpeedLetter
         : dotsAhead
-        ? pacSpeedDot
-        : pacSpeedEmpty;
+          ? pacSpeedDot
+          : pacSpeedEmpty;
       pacX += speed;
       pacEl!.style.left = pacX + "px";
 
@@ -410,8 +410,8 @@ export default function PacmanCodenyx({
           g.eyePhase += g.eyeSpeed;
           // Center at -0.9 (left-biased), amplitude ±0.8 so range is [-1.7, -0.1]
           const ox = -0.9 + Math.sin(g.eyePhase) * 0.8;
-          const oy =        Math.sin(g.eyePhase * 1.3 + 1) * 0.5; // subtle vertical drift
-          g.pupilL.setAttribute("cx", (7  + ox).toFixed(3));
+          const oy = Math.sin(g.eyePhase * 1.3 + 1) * 0.5; // subtle vertical drift
+          g.pupilL.setAttribute("cx", (7 + ox).toFixed(3));
           g.pupilR.setAttribute("cx", (13 + ox).toFixed(3));
           g.pupilL.setAttribute("cy", (8.5 + oy).toFixed(3));
           g.pupilR.setAttribute("cy", (8.5 + oy).toFixed(3));
@@ -500,7 +500,7 @@ export default function PacmanCodenyx({
       id={id}
       ref={wrapperRef}
       className={[
-        "relative flex flex-col items-center justify-center w-full h-screen bg-black overflow-hidden font-mono",
+        "relative flex flex-col items-center justify-center w-full min-h-[300px] py-[60px] bg-black overflow-hidden font-mono",
         className,
       ]
         .filter(Boolean)
