@@ -45,8 +45,8 @@ const Highlights = () => {
                             <div className="absolute inset-0 rounded-full border-[2px] border-accent-secondary/20" />
                             <div className="absolute inset-10 rounded-full border-[1px] border-dashed border-accent-primary/20 rotate-[-45deg]" />
                             <div className="absolute top-[50%] left-0 w-[50%] h-[2px] bg-accent-secondary/50 origin-right rotate-[30deg]" />
-                            <div className="absolute top-[20%] right-[30%] font-display text-[140px] font-black leading-none text-accent-primary/[0.03]">36</div>
                         </div>
+                        <div className="absolute top-[10px] right-[20px] font-display text-[140px] font-black leading-none text-white/[0.07] pointer-events-none select-none">36</div>
 
                         <div className="relative z-10 w-full md:w-[60%]">
                             <div className="w-14 h-14 rounded-full bg-accent-primary/10 flex items-center justify-center mb-8 border border-white/5">
@@ -90,7 +90,7 @@ const Highlights = () => {
                                 <line x1="50" y1="10" x2="50" y2="90" />
                                 <line x1="10" y1="50" x2="90" y2="50" />
                                 <circle cx="50" cy="10" r="2" fill="#FFFFFF" />
-                                <circle cx="90" cy="50" r="2" fill="#FFFF00" />
+                                <circle cx="90" cy="50" r="2" fill="#FF0000" />
                             </svg>
                         </div>
 
