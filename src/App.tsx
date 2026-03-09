@@ -10,8 +10,11 @@ import CTA from './components/CTA';
 import FAQ from './components/FAQ';
 import PacmanCodenyx from './components/pacman/PacmanCodenyx';
 import Footer from './components/Footer';
+import useSmoothScroll from './hooks/useSmoothScroll';
 
 function App() {
+  useSmoothScroll();
+
   return (
     <div className="bg-black min-h-screen text-white font-body selection:bg-white selection:text-black">
       <Navbar />
