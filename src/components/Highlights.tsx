@@ -41,10 +41,11 @@ const Highlights = () => {
                     {/* Card 1: 36 Hours - Spans 2 columns, tall */}
                     <motion.div variants={itemVariants} className="card-minimal md:col-span-2 md:row-span-2 min-h-[460px] flex flex-col justify-end">
                         {/* Large Visual Anchor: Abstract Clock/Focus Ring */}
-                        <div className="absolute top-[-50px] right-[-50px] w-[500px] h-[500px] pointer-events-none opacity-40">
-                            <div className="absolute inset-0 rounded-full border-[2px] border-accent-secondary/20" />
-                            <div className="absolute inset-10 rounded-full border-[1px] border-dashed border-accent-primary/20 rotate-[-45deg]" />
-                            <div className="absolute top-[50%] left-0 w-[50%] h-[2px] bg-accent-secondary/50 origin-right rotate-[30deg]" />
+                        <div className="absolute top-8 right-8 w-[250px] h-[250px] md:w-[350px] md:h-[350px] pointer-events-none opacity-80 z-0 flex items-center justify-center">
+                            <div className="absolute inset-0 rounded-full border-[2px] border-accent-secondary/40" />
+                            <div className="absolute inset-6 md:inset-8 rounded-full border-[1px] border-dashed border-accent-primary/50 rotate-[-45deg]" />
+                            <div className="absolute top-[50%] left-0 w-[50%] h-[2px] bg-accent-secondary/80 origin-right rotate-[30deg]" />
+                            <div className="font-display text-[80px] md:text-[120px] font-black leading-none text-accent-primary/30 z-10 mr-4">36</div>
                         </div>
                         <div className="absolute top-[10px] right-[20px] font-display text-[140px] font-black leading-none text-white/[0.07] pointer-events-none select-none">36</div>
 

@@ -193,14 +193,15 @@ const Footer = () => {
                             © {currentYear} CodeNyx — All Rights Reserved
                         </p>
 
-                        <div className="flex items-center gap-[8px]">
-                            <span className="font-mono text-[10px] text-white/15 tracking-[2px] uppercase">
-                                Organized by
-                            </span>
-                            <span className="font-mono text-[11px] text-white/40 font-bold tracking-[1.5px] uppercase border border-white/[0.06] px-[10px] py-[5px] rounded-[4px] hover:border-accent-secondary/30 hover:text-accent-secondary/70 transition-all duration-300 cursor-default">
-                                GDG CVR On Campus
-                            </span>
-                        </div>
+                        <a
+                            href="https://gdgcvrwebsite.vercel.app/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-mono text-[11px] text-accent-primary/60 font-bold tracking-[2px] uppercase bg-white/5 px-2 py-1 rounded-sm hover:text-accent-secondary hover:bg-white/10 transition-colors"
+                        >
+                            GDG CVR On Campus
+                        </a>
+                    </div>
 
                     </div>
                 </div>
