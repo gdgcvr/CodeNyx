@@ -168,7 +168,7 @@ const Footer = () => {
 
                             {/* Register CTA in footer */}
                             <a
-                                href="#register"
+                                href="https://hackculture.io/hackathons/codenyx?preview=true" target="_blank" rel="noopener noreferrer"
                                 className="inline-flex items-center gap-[10px] mt-[32px] font-mono text-[12px] font-bold text-accent-secondary uppercase tracking-[2px] group"
                             >
                                 <span className="group-hover:tracking-[4px] transition-all duration-300">

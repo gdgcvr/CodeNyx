@@ -36,9 +36,9 @@ const Navbar = () => {
 
                 {/* Register Button - High contrast */}
                 <div className="hidden md:flex items-center">
-                    <button className="bg-accent-primary text-bg-base hover:bg-white transition-colors duration-300 font-body text-[14px] font-bold uppercase tracking-[1px] px-[24px] py-[12px] rounded-[4px] shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+                    <a href="https://hackculture.io/hackathons/codenyx?preview=true" target="_blank" rel="noopener noreferrer" className="bg-accent-primary text-bg-base hover:bg-white transition-colors duration-300 font-body text-[14px] font-bold uppercase tracking-[1px] px-[24px] py-[12px] rounded-[4px] shadow-[0_0_20px_rgba(255,255,255,0.1)] inline-flex items-center justify-center text-center">
                         Register
-                    </button>
+                    </a>
                 </div>
 
                 {/* Mobile Menu Toggle */}
@@ -63,9 +63,9 @@ const Navbar = () => {
                             {link}
                         </a>
                     ))}
-                    <button className="font-display text-[28px] font-bold tracking-tight text-accent-secondary hover:text-accent-secondary/80 text-left transition-colors pt-6 border-t border-accent-secondary/20 uppercase">
+                    <a href="https://hackculture.io/hackathons/codenyx?preview=true" target="_blank" rel="noopener noreferrer" className="font-display text-[28px] font-bold tracking-tight text-accent-secondary hover:text-accent-secondary/80 text-left transition-colors pt-6 border-t border-accent-secondary/20 uppercase block w-full">
                         Register
-                    </button>
+                    </a>
                 </div>
             )}
         </nav>
