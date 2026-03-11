@@ -1,18 +1,19 @@
-import React from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Highlights from './components/Highlights';
-import About from './components/About';
-import Process from './components/Process';
-import Timeline from './components/Timeline';
-import Prizes from './components/Prizes';
-import CTA from './components/CTA';
-import FAQ from './components/FAQ';
-import PacmanCodenyx from './components/pacman/PacmanCodenyx';
-import Footer from './components/Footer';
-import useSmoothScroll from './hooks/useSmoothScroll';
-import { Analytics } from "@vercel/analytics/react"
-import { SpeedInsights } from "@vercel/speed-insights/react"
+import React from "react";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Highlights from "./components/Highlights";
+import About from "./components/About";
+import Process from "./components/Process";
+import Timeline from "./components/Timeline";
+import Prizes from "./components/Prizes";
+import CTA from "./components/CTA";
+import Community from "./components/Community";
+import FAQ from "./components/FAQ";
+import PacmanCodenyx from "./components/pacman/PacmanCodenyx";
+import Footer from "./components/Footer";
+import useSmoothScroll from "./hooks/useSmoothScroll";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 function App() {
   useSmoothScroll();
@@ -28,6 +29,7 @@ function App() {
         <Timeline />
         <Prizes />
         <CTA />
+        <Community />
         <FAQ />
         <PacmanCodenyx />
       </main>

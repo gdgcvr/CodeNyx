@@ -168,22 +168,40 @@ const Hero = () => {
           className="font-body text-[18px] text-accent-primary/50 max-w-[620px] leading-[1.7] mb-[80px]"
         >
           CodeNyx is the flagship hackathon organized by{" "}
-          <strong>Google Developer Group (GDG) on Campus CVR College of Engineering</strong>. It brings
-          together developers, designers, and innovators for an intense 36-hour
-          build sprint where technology meets real-world challenges at CVR
-          College of Engineering.
+          <strong>
+            Google Developer Group (GDG) on Campus CVR College of Engineering
+          </strong>
+          . It brings together developers, designers, and innovators for an
+          intense 36-hour build sprint where technology meets real-world
+          challenges at CVR College of Engineering.
         </motion.p>
 
         {/* CTA */}
         <motion.div
           variants={itemVariants}
-          className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-[120px] pointer-events-auto"
+          className="flex flex-col items-center gap-6 mb-[120px] pointer-events-auto"
         >
-          <a href="https://hackculture.io/hackathons/codenyx" target="_blank" rel="noopener noreferrer" className="btn-primary w-full sm:w-auto text-center flex justify-center items-center">
-            Register for DSA Round
-          </a>
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto">
+            <a
+              href="https://hackculture.io/hackathons/codenyx"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary w-full sm:w-auto text-center flex justify-center items-center"
+            >
+              Register for DSA Round
+            </a>
+            <a
+              href="#community"
+              className="btn-secondary w-full sm:w-auto text-center flex justify-center items-center border border-white/20 text-white hover:bg-white/10 transition-all duration-300 font-body text-[14px] font-bold uppercase tracking-[1px] px-[24px] py-[16px] rounded-[4px]"
+            >
+              Join the Community
+            </a>
+          </div>
 
-          <a href="#highlights" className="btn-ghost w-full sm:w-auto text-center flex justify-center items-center">
+          <a
+            href="#highlights"
+            className="btn-ghost text-accent-primary/40 hover:text-accent-primary transition-colors text-[14px] font-bold uppercase tracking-[2px]"
+          >
             View Highlights
           </a>
         </motion.div>
