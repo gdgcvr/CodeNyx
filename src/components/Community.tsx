@@ -32,7 +32,6 @@ const Community = () => {
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent-primary/5 rounded-full blur-[120px] pointer-events-none"
         aria-hidden="true"
       />
-      Broadway
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -47,7 +46,6 @@ const Community = () => {
           >
             Join the Community
           </h2>
-          Broadway{" "}
           <p className="font-body text-[20px] text-accent-primary/60 max-w-[700px] mx-auto leading-relaxed">
             Already registered? Join the community for all the latest updates,
             announcements, and networking opportunities.

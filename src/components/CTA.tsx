@@ -62,7 +62,6 @@ const CTA = () => {
             >
               Enter The Arena.
             </h2>
-            Broadway
             <p className="font-body text-[20px] text-accent-primary/50 leading-[1.8] mb-[64px]">
               Begin your CodeNyx journey by registering for the DSA screening
               round. Participants will compete individually in an online
