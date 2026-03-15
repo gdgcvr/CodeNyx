@@ -237,7 +237,7 @@ const Footer = () => {
             </p>
 
             <a
-              href="https://gdg.cvr.ac.in/"
+              href="https://gdgcvr.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="font-mono text-[11px] text-accent-primary/60 font-bold tracking-[2px] uppercase bg-white/5 px-2 py-1 rounded-sm hover:text-accent-secondary hover:bg-white/10 transition-colors"
