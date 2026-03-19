@@ -8,6 +8,7 @@ import Timeline from "./components/Timeline";
 import Prizes from "./components/Prizes";
 import CTA from "./components/CTA";
 import Community from "./components/Community";
+import Sponsors from "./components/Sponsors";
 import FAQ from "./components/FAQ";
 import PacmanCodenyx from "./components/pacman/PacmanCodenyx";
 import Footer from "./components/Footer";
@@ -35,6 +36,7 @@ function App() {
         <Prizes />
         <CTA />
         <Community />
+        <Sponsors />
         <FAQ />
         <PacmanCodenyx />
       </main>
