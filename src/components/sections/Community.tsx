@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image";
-import waIcon from "../assets/wa.svg";
-import discordIcon from "../assets/discord.svg";
+import waIcon from "@/assets/wa.svg";
+import discordIcon from "@/assets/discord.svg";
 import { Users } from "lucide-react";
 
 const Community = () => {
