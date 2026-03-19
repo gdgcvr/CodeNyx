@@ -143,7 +143,6 @@ const Community = () => {
               </span>
             </div>
           </a>
-
           {/* Discord Card */}
           <a
             href="https://discord.gg/c6zndHjWXm"
