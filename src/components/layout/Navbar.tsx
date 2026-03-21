@@ -40,15 +40,19 @@ const Navbar = () => {
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-[48px]">
-          {["Home", "Highlights", "Timeline", "Sponsors", "FAQs"].map((link) => (
-            <a
-              key={link}
-              href={`/#${link.toLowerCase()}`}
-              className="font-body text-[14px] font-medium text-accent-primary/60 hover:text-accent-primary transition-colors duration-200 uppercase tracking-[1px]"
-            >
-              {link}
-            </a>
-          ))}
+          {["Home", "Highlights", "Timeline", "Sponsors", "FAQs", "Problems"].map(
+            (link) => (
+              <a
+                key={link}
+                href={
+                  link === "Problems" ? "/problems" : `/#${link.toLowerCase()}`
+                }
+                className="font-body text-[14px] font-medium text-accent-primary/60 hover:text-accent-primary transition-colors duration-200 uppercase tracking-[1px]"
+              >
+                {link}
+              </a>
+            ),
+          )}
         </div>
 
         {/* Register & Community Buttons */}
@@ -87,16 +91,20 @@ const Navbar = () => {
           className="md:hidden absolute top-[80px] left-0 right-0 bg-bg-base/95 backdrop-blur-xl border-b border-white/[0.04] py-8 px-8 flex flex-col gap-8"
           aria-label="Mobile Navigation"
         >
-          {["Home", "Highlights", "Timeline", "Sponsors", "FAQs"].map((link) => (
-            <a
-              key={link}
-              href={`/#${link.toLowerCase()}`}
-              className="font-display text-[28px] font-bold tracking-tight text-accent-primary/60 hover:text-accent-primary transition-colors uppercase"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {link}
-            </a>
-          ))}
+          {["Home", "Highlights", "Timeline", "Sponsors", "FAQs", "Problems"].map(
+            (link) => (
+              <a
+                key={link}
+                href={
+                  link === "Problems" ? "/problems" : `/#${link.toLowerCase()}`
+                }
+                className="font-display text-[28px] font-bold tracking-tight text-accent-primary/60 hover:text-accent-primary transition-colors uppercase"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {link}
+              </a>
+            ),
+          )}
           <div className="flex flex-col gap-4 pt-6 border-t border-white/10">
             <a
               href="/#community"

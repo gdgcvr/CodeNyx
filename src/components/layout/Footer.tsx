@@ -10,6 +10,7 @@ const Footer = () => {
     { label: "Highlights", href: "/#highlights" },
     { label: "Timeline", href: "/#timeline" },
     { label: "FAQs", href: "/#faqs" },
+    { label: "Problems", href: "/problems" },
   ];
 
   const socialLinks = [
