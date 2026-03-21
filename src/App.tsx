@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import Announcements from "./components/Announcements";
 import Highlights from "./components/Highlights";
 import About from "./components/About";
 import Process from "./components/Process";
@@ -29,6 +30,7 @@ function App() {
       <Navbar />
       <main>
         <Hero />
+        <Announcements />
         <Highlights />
         <About />
         <Process />
