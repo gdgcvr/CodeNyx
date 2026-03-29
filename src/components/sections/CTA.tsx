@@ -64,22 +64,12 @@ const CTA = () => {
               Enter The Arena.
             </h2>
             <p className="font-body text-[20px] text-accent-primary/50 leading-[1.8] mb-[64px]">
-              Begin your CodeNyx journey by registering for the DSA screening
-              round. Participants will compete individually in an online
-              problem-solving contest. Top performers will move forward to the
-              PPT submission stage and eventually the final 36-hour offline
-              hackathon at CVR College of Engineering.
+              Registrations for CodeNyx 2026 are now officially closed. The DSA
+              screening round has been completed, and participants are moving
+              forward to the next stages of the hackathon. Stay tuned for
+              upcoming announcements and event highlights.
             </p>
-            <div className="flex flex-col sm:flex-row w-full sm:w-auto justify-center items-center gap-[16px] mb-[64px]">
-              <a
-                href="https://hackculture.io/hackathons/codenyx"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary w-full sm:w-auto h-[64px] px-[48px] text-[18px] text-center flex items-center justify-center"
-              >
-                Register for DSA Round
-              </a>
-            </div>
+
             <p className="font-mono text-[13px] text-accent-primary/30 tracking-[3px] uppercase">
               DSA Round: March 20, 2026 // 8:00 PM – 10:00 PM IST
             </p>

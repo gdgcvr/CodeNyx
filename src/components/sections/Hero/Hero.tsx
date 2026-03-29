@@ -193,14 +193,9 @@ const Hero = () => {
           className="flex flex-col items-center gap-6 mb-[120px] pointer-events-auto"
         >
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto">
-            <a
-              href="https://hackculture.io/hackathons/codenyx"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary w-full sm:w-auto text-center flex justify-center items-center"
-            >
-              Register for DSA Round
-            </a>
+            <div className="btn-primary opacity-50 cursor-not-allowed w-full sm:w-auto text-center flex justify-center items-center">
+              Registrations Closed
+            </div>
             <a
               href="#community"
               className="btn-secondary w-full sm:w-auto text-center flex justify-center items-center border border-white/20 text-white hover:bg-white/10 transition-all duration-300 font-body text-[14px] font-bold uppercase tracking-[1px] px-[24px] py-[16px] rounded-[4px]"

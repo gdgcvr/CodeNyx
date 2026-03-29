@@ -105,14 +105,7 @@ const Navbar = () => {
           >
             Community
           </a>
-          <a
-            href="https://hackculture.io/hackathons/codenyx"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-accent-primary text-bg-base hover:bg-white transition-colors duration-300 font-body text-[14px] font-bold uppercase tracking-[0.8px] px-[22px] py-[11px] rounded-[4px] shadow-[0_0_20px_rgba(255,255,255,0.1)] inline-flex items-center justify-center text-center"
-          >
-            Register
-          </a>
+
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -158,15 +151,7 @@ const Navbar = () => {
             >
               Community
             </a>
-            <a
-              href="https://hackculture.io/hackathons/codenyx"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-display text-[28px] font-bold tracking-tight text-accent-secondary hover:text-accent-secondary/80 transition-colors uppercase"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Register
-            </a>
+
           </div>
         </nav>
       )}

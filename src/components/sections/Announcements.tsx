@@ -1,39 +1,55 @@
 "use client";
 
-import React from "react";
 import { motion } from "framer-motion";
+import { ExternalLink } from "lucide-react";
 
 const announcements = [
   {
     status: "ongoing",
+    title: "🚀 CodeNyx 2026 – Final Team List",
+    description:
+      "The final team list has been released.\n\nParticipants can view their teams and connect with members using the LinkedIn links provided.\n\n⏳ Hackathon starts on Monday — be ready.",
+    link: "https://docs.google.com/spreadsheets/d/1GY9uaoZa2WFeGlOoxB_3O92JH4uyBFHx9pj2MWQgSVc/view",
+    linkText: "Hackathon Teams",
+  },
+  {
+    status: "completed",
     title: "💡Idea Submission Started – CodeNyx 2026",
-    description: "Start Strong. Build Smart.\n\nThe Idea Submission phase for CodeNyx 2026 is now live.\n\nParticipants are expected to present a clear problem statement, a structured approach, and the potential impact of their solution. This phase sets the direction for what you will build during the hackathon.\n\nDefine your idea with clarity and purpose. Strong foundations lead to exceptional solutions."
+    description:
+      "Start Strong. Build Smart.\n\nThe Idea Submission phase for CodeNyx 2026 is now live.\n\nParticipants are expected to present a clear problem statement, a structured approach, and the potential impact of their solution. This phase sets the direction for what you will build during the hackathon.\n\nDefine your idea with clarity and purpose. Strong foundations lead to exceptional solutions.",
   },
   {
     status: "completed",
     title: "💻 DSA Round Concluded – CodeNyx 2026",
-    description: "Evaluated. Ranked. Ready.\n\nThe DSA Round for CodeNyx 2026 has now officially concluded.\n\nParticipants demonstrated strong problem-solving skills and efficiency while tackling the challenges. This round marks an important step in identifying those moving forward in the hackathon journey.\n\nStay tuned as we move closer to the next phase."
+    description:
+      "Evaluated. Ranked. Ready.\n\nThe DSA Round for CodeNyx 2026 has now officially concluded.\n\nParticipants demonstrated strong problem-solving skills and efficiency while tackling the challenges. This round marks an important step in identifying those moving forward in the hackathon journey.\n\nStay tuned as we move closer to the next phase.",
   },
   {
     status: "completed",
     title: "💻 DSA Round Started – CodeNyx 2026",
-    description: "Code. Solve. Advance.\n\nThe DSA Round for CodeNyx 2026 has now officially started in online mode.\n\nParticipants are expected to solve the given problems within the allotted time, demonstrating strong problem-solving skills and efficiency. This round will play a key role in shortlisting participants for the next phase of the hackathon.\n\nPerform well and secure your place in the next stage."
+    description:
+      "Code. Solve. Advance.\n\nThe DSA Round for CodeNyx 2026 has now officially started in online mode.\n\nParticipants are expected to solve the given problems within the allotted time, demonstrating strong problem-solving skills and efficiency. This round will play a key role in shortlisting participants for the next phase of the hackathon.\n\nPerform well and secure your place in the next stage.",
   },
   {
     status: "completed",
     title: "🚨 Registrations Closed – CodeNyx 2026",
-    description: "We would like to inform you that registrations for CodeNyx 2026 – Inter-College DSA Contest & 36-Hour Hackathon are now officially closed.\n\nWe sincerely appreciate the overwhelming response and enthusiasm shown by participants across colleges. All registered participants are requested to stay tuned for further updates and event guidelines.\n\nWe look forward to an exciting and competitive experience ahead."
+    description:
+      "We would like to inform you that registrations for CodeNyx 2026 – Inter-College DSA Contest & 36-Hour Hackathon are now officially closed.\n\nWe sincerely appreciate the overwhelming response and enthusiasm shown by participants across colleges. All registered participants are requested to stay tuned for further updates and event guidelines.\n\nWe look forward to an exciting and competitive experience ahead.",
   },
   {
     status: "completed",
     title: "🚀 Registrations Open – CodeNyx 2026",
-    description: "Build. Break. Innovate.\n\nWe are excited to announce that registrations for CodeNyx 2026 – Inter-College DSA Contest & 36-Hour Hackathon are now officially open.\n\nJoin a community of driven developers and take on the challenge of solving real-world problems through technology. Collaborate with like-minded innovators, push your boundaries, and turn your ideas into impactful solutions.\n\nSecure your spot and be part of an experience that goes beyond just coding."
-  }
+    description:
+      "Build. Break. Innovate.\n\nWe are excited to announce that registrations for CodeNyx 2026 – Inter-College DSA Contest & 36-Hour Hackathon are now officially open.\n\nJoin a community of driven developers and take on the challenge of solving real-world problems through technology. Collaborate with like-minded innovators, push your boundaries, and turn your ideas into impactful solutions.\n\nSecure your spot and be part of an experience that goes beyond just coding.",
+  },
 ];
 
 const Announcements = () => {
   return (
-    <section id="announcements" className="section-padding bg-bg-base relative pt-24 pb-24">
+    <section
+      id="announcements"
+      className="section-padding bg-bg-base relative pt-24 pb-24"
+    >
       <div className="max-w-[1200px] mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -78,7 +94,9 @@ const Announcements = () => {
                       : "border-white/20 text-white/50 bg-white/5"
                   }`}
                 >
-                  {item.status === "ongoing" ? "Currently Ongoing" : "Completed"}
+                  {item.status === "ongoing"
+                    ? "Currently Ongoing"
+                    : "Completed"}
                 </span>
               </div>
 
@@ -87,11 +105,40 @@ const Announcements = () => {
                 {item.title}
               </h3>
 
-              {/* Description */}
               <div className="font-body text-[16px] md:text-[18px] text-accent-primary/60 leading-[1.8] space-y-4 max-w-[800px]">
                 {item.description.split("\n\n").map((para, i) => (
-                  <p key={i}>{para}</p>
+                  <p key={i}>
+                    {para.split(/(https?:\/\/[^\s]+)/g).map((part, j) =>
+                      part.match(/^https?:\/\//) ? (
+                        <a
+                          key={j}
+                          href={part}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-accent-secondary hover:underline break-all"
+                        >
+                          {part}
+                        </a>
+                      ) : (
+                        part
+                      ),
+                    )}
+                  </p>
                 ))}
+
+                {(item as any).link && (
+                  <div className="pt-4">
+                    <a
+                      href={(item as any).link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-accent-secondary text-bg-base px-8 py-4 rounded-full font-bold hover:bg-white transition-all duration-300 shadow-[0_0_20px_rgba(0,186,136,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
+                    >
+                      {(item as any).linkText || "Learn More"}
+                      <ExternalLink size={18} />
+                    </a>
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}
