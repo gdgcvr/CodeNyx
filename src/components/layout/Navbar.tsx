@@ -75,24 +75,26 @@ const Navbar = () => {
 
         {/* Desktop Links */}
         <div className="hidden lg:flex items-center gap-[32px]">
-          {["Home", "Announcements", "Highlights", "Timeline", "Sponsors", "FAQs", "Problems"].map(
-            (link) => (
-              <a
-                key={link}
-                href={
-                  link === "Problems" ? "/problems" : `/#${link.toLowerCase()}`
-                }
-                className={`font-body text-[14px] font-medium transition-colors duration-200 uppercase tracking-[0.8px] relative group ${
-                  (link === "Problems" && pathname === "/problems") ||
-                  activeSection === link.toLowerCase()
-                    ? "text-accent-primary"
-                    : "text-accent-primary/80 hover:text-accent-primary"
-                }`}
-              >
-                {link}
-              </a>
-            ),
-          )}
+          {[
+            "Home",
+            "Announcements",
+            "Highlights",
+            "Timeline",
+            "Sponsors",
+            "FAQs",
+          ].map((link) => (
+            <a
+              key={link}
+              href={`/#${link.toLowerCase()}`}
+              className={`font-body text-[14px] font-medium transition-colors duration-200 uppercase tracking-[0.8px] relative group ${
+                activeSection === link.toLowerCase()
+                  ? "text-accent-primary"
+                  : "text-accent-primary/80 hover:text-accent-primary"
+              }`}
+            >
+              {link}
+            </a>
+          ))}
         </div>
 
         {/* Register & Community Buttons */}
@@ -131,20 +133,23 @@ const Navbar = () => {
           className="lg:hidden absolute top-[80px] left-0 right-0 bg-bg-base/95 backdrop-blur-xl border-b border-white/[0.04] py-8 px-8 flex flex-col gap-8"
           aria-label="Mobile Navigation"
         >
-          {["Home", "Announcements", "Highlights", "Timeline", "Sponsors", "FAQs", "Problems"].map(
-            (link) => (
-              <a
-                key={link}
-                href={
-                  link === "Problems" ? "/problems" : `/#${link.toLowerCase()}`
-                }
-                className="font-display text-[28px] font-bold tracking-tight text-accent-primary/60 hover:text-accent-primary transition-colors uppercase"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {link}
-              </a>
-            ),
-          )}
+          {[
+            "Home",
+            "Announcements",
+            "Highlights",
+            "Timeline",
+            "Sponsors",
+            "FAQs",
+          ].map((link) => (
+            <a
+              key={link}
+              href={`/#${link.toLowerCase()}`}
+              className="font-display text-[28px] font-bold tracking-tight text-accent-primary/60 hover:text-accent-primary transition-colors uppercase"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {link}
+            </a>
+          ))}
           <div className="flex flex-col gap-4 pt-6 border-t border-white/10">
             <a
               href="/#community"
