@@ -82,11 +82,15 @@ const Navbar = () => {
             "Timeline",
             "Sponsors",
             "FAQs",
+            "Problems",
           ].map((link) => (
             <a
               key={link}
-              href={`/#${link.toLowerCase()}`}
+              href={
+                link === "Problems" ? "/problems" : `/#${link.toLowerCase()}`
+              }
               className={`font-body text-[14px] font-medium transition-colors duration-200 uppercase tracking-[0.8px] relative group ${
+                (link === "Problems" && pathname === "/problems") ||
                 activeSection === link.toLowerCase()
                   ? "text-accent-primary"
                   : "text-accent-primary/80 hover:text-accent-primary"
@@ -100,12 +104,17 @@ const Navbar = () => {
         {/* Register & Community Buttons */}
         <div className="hidden lg:flex items-center gap-3">
           <a
+            href="/raise"
+            className="border border-white/20 text-white hover:bg-white/10 transition-all duration-300 font-body text-[14px] font-bold uppercase tracking-[0.8px] px-[22px] py-[11px] rounded-[4px] inline-flex items-center justify-center text-center"
+          >
+            Raise Query
+          </a>
+          <a
             href="/#community"
             className="border border-white/20 text-white hover:bg-white/10 transition-all duration-300 font-body text-[14px] font-bold uppercase tracking-[0.8px] px-[22px] py-[11px] rounded-[4px] inline-flex items-center justify-center text-center"
           >
             Community
           </a>
-
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -123,7 +132,7 @@ const Navbar = () => {
       {/* Mobile Dropdown */}
       {mobileMenuOpen && (
         <nav
-          className="lg:hidden absolute top-[80px] left-0 right-0 bg-bg-base/95 backdrop-blur-xl border-b border-white/[0.04] py-8 px-8 flex flex-col gap-8"
+          className="lg:hidden absolute top-[80px] left-0 right-0 bg-bg-base/95 backdrop-blur-xl border-b border-white/[0.04] py-6 px-8 flex flex-col gap-6 max-h-[calc(100vh-80px)] overflow-y-auto hide-scrollbar"
           aria-label="Mobile Navigation"
         >
           {[
@@ -133,11 +142,14 @@ const Navbar = () => {
             "Timeline",
             "Sponsors",
             "FAQs",
+            "Problems",
           ].map((link) => (
             <a
               key={link}
-              href={`/#${link.toLowerCase()}`}
-              className="font-display text-[28px] font-bold tracking-tight text-accent-primary/60 hover:text-accent-primary transition-colors uppercase"
+              href={
+                link === "Problems" ? "/problems" : `/#${link.toLowerCase()}`
+              }
+              className="font-display text-[24px] font-bold tracking-tight text-accent-primary/60 hover:text-accent-primary transition-colors uppercase"
               onClick={() => setMobileMenuOpen(false)}
             >
               {link}
@@ -145,13 +157,19 @@ const Navbar = () => {
           ))}
           <div className="flex flex-col gap-4 pt-6 border-t border-white/10">
             <a
+              href="/raise"
+              className="font-display text-[24px] font-bold tracking-tight text-accent-primary hover:text-accent-primary/80 transition-colors uppercase"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Raise Query
+            </a>
+            <a
               href="/#community"
-              className="font-display text-[28px] font-bold tracking-tight text-accent-primary hover:text-accent-primary/80 transition-colors uppercase"
+              className="font-display text-[24px] font-bold tracking-tight text-accent-primary hover:text-accent-primary/80 transition-colors uppercase"
               onClick={() => setMobileMenuOpen(false)}
             >
               Community
             </a>
-
           </div>
         </nav>
       )}
