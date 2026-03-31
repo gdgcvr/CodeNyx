@@ -29,6 +29,8 @@ const Process = () => {
       desc: "Shortlisted candidates submit a PPT outlining their ideas or proposed solutions. Organizers evaluate submissions to select final participants.",
       num: "02",
       iconStr: "//",
+      downloadLink: "/Codenyx_PPT_Round_Template.pptx",
+      downloadText: "Download Template",
     },
     {
       title: "Team Formation",
@@ -137,9 +139,32 @@ const Process = () => {
                   {item.title}
                 </h3>
 
-                <p className="font-body text-[16px] text-accent-primary/50 leading-[1.75]">
+                <p className="font-body text-[16px] text-accent-primary/50 leading-[1.75] mb-[20px]">
                   {item.desc}
                 </p>
+
+                {item.downloadLink && (
+                  <a
+                    href={item.downloadLink}
+                    download
+                    className="inline-flex items-center gap-2 font-mono text-[12px] font-bold text-accent-secondary uppercase tracking-[2px] hover:text-white transition-colors group"
+                  >
+                    <span>{item.downloadText}</span>
+                    <svg
+                      className="w-4 h-4 group-hover:translate-y-0.5 transition-transform duration-300"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                      />
+                    </svg>
+                  </a>
+                )}
               </div>
             </motion.li>
           ))}

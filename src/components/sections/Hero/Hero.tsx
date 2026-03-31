@@ -202,6 +202,26 @@ const Hero = () => {
             >
               Join the Community
             </a>
+            <a
+              href="/Codenyx_PPT_Round_Template.pptx"
+              download
+              className="w-full sm:w-auto text-center flex justify-center items-center gap-2 border border-accent-secondary/50 text-accent-secondary hover:bg-accent-secondary/10 transition-all duration-300 font-body text-[14px] font-bold uppercase tracking-[1px] px-[24px] py-[16px] rounded-[4px]"
+            >
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                />
+              </svg>
+              Download PPT
+            </a>
           </div>
 
           <a
